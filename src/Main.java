@@ -2,8 +2,10 @@ public class Main {
 
     public Main() {
 
-        Kaktus k = new Kaktus("p", 1.5);
-        System.out.println(k.getHöjdIMeter());
+        Växt igge = new Kaktus("Igge", 0.2);
+        Växt laura = new Palm("Laura", 5);
+        Växt meatloaf = new KöttätandeVäxt("Meatloaf", 0.7);
+        Växt olof = new Palm("Olof", 1);
 
     }
 
