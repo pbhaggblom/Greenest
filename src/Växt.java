@@ -4,6 +4,7 @@ public abstract class Växt {
     private Växttyp typAvVäxt;
     private double höjdIMeter;
     private Näringstyp typAvNäring;
+    private double näringsmängd;
 
     public Växt(String namn, double höjdIMeter) {
         this.namn = namn;
@@ -40,5 +41,9 @@ public abstract class Växt {
 
     public void setTypAvNäring(Näringstyp typAvNäring) {
         this.typAvNäring = typAvNäring;
+    }
+
+    public void setNäringsmängd(double näringsmängd) {
+        this.näringsmängd = näringsmängd;
     }
 }

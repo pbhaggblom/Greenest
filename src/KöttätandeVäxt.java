@@ -1,4 +1,4 @@
-public class KöttätandeVäxt extends Växt {
+public class KöttätandeVäxt extends Växt implements DynamisktNäringsbehov {
 
     public KöttätandeVäxt(String namn, double höjdIMeter) {
         super(namn, höjdIMeter);
@@ -6,4 +6,8 @@ public class KöttätandeVäxt extends Växt {
         this.setTypAvNäring(Näringstyp.PROTEINDRYCK);
     }
 
+    @Override
+    public double kalkyleraNäringsmängd(double höjdIMeter) {
+        return 0.1 + (0.2 * höjdIMeter);
+    }
 }

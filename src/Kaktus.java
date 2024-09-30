@@ -4,6 +4,7 @@ public class Kaktus extends Växt {
         super(namn, höjdIMeter);
         this.setTypAvVäxt(Växttyp.KAKTUS);
         this.setTypAvNäring(Näringstyp.MINERALVATTEN);
+        this.setNäringsmängd(0.02);
     }
 
 }
