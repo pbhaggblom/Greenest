@@ -1,9 +1,8 @@
 public class Kaktus extends Växt {
 
     public Kaktus(String namn, double höjdIMeter) {
-        this.setNamn(namn);
+        super(namn, höjdIMeter);
         this.setTypAvVäxt(Växttyp.KAKTUS);
-        this.setHöjdIMeter(höjdIMeter);
         this.setTypAvNäring(Näringstyp.MINERALVATTEN);
     }
 

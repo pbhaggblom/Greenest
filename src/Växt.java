@@ -5,6 +5,11 @@ public abstract class Växt {
     private double höjdIMeter;
     private Näringstyp typAvNäring;
 
+    public Växt(String namn, double höjdIMeter) {
+        this.namn = namn;
+        this.höjdIMeter = höjdIMeter;
+    }
+
     public String getNamn() {
         return namn;
     }
