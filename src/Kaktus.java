@@ -1,2 +1,2 @@
-public class Kaktus {
+public class Kaktus extends Växt {
 }

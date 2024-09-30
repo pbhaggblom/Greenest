@@ -1,2 +1,6 @@
-public class Växt {
+public abstract class Växt {
+
+    private double höjdIMeter;
+    private String typAvNäring;
+
 }

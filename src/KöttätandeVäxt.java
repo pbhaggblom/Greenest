@@ -1,2 +1,2 @@
-public class KöttätandeVäxt {
+public class KöttätandeVäxt extends Växt {
 }

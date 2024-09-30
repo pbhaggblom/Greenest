@@ -1,2 +1,2 @@
-public class Palm {
+public class Palm extends Växt {
 }
