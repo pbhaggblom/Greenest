@@ -15,14 +15,6 @@ public abstract class Växt {
         return namn;
     }
 
-    public void setNamn(String namn) {
-        this.namn = namn;
-    }
-
-    public Växttyp getTypAvVäxt() {
-        return typAvVäxt;
-    }
-
     public void setTypAvVäxt(Växttyp typAvVäxt) {
         this.typAvVäxt = typAvVäxt;
     }
@@ -31,16 +23,16 @@ public abstract class Växt {
         return höjdIMeter;
     }
 
-    public void setHöjdIMeter(double höjdIMeter) {
-        this.höjdIMeter = höjdIMeter;
-    }
-
     public Näringstyp getTypAvNäring() {
         return typAvNäring;
     }
 
     public void setTypAvNäring(Näringstyp typAvNäring) {
         this.typAvNäring = typAvNäring;
+    }
+
+    public double getNäringsmängd() {
+        return näringsmängd;
     }
 
     public void setNäringsmängd(double näringsmängd) {
