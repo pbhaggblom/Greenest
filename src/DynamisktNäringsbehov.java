@@ -1,5 +1,5 @@
 public interface DynamisktNäringsbehov {
 
-    double kalkyleraNäringsmängd(double höjdIMeter);
+    void kalkyleraNäringsmängd(double höjdIMeter);
 
 }

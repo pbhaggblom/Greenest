@@ -16,33 +16,36 @@ public class Main {
         while (true) {
             String input = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
 
+            if (input == null) {
+                break;
+            }
+
             Växt aktuellVäxt = null;
 
             for (Växt växt : växter) {
                 if (växt.getNamn().equals(input)) {
                     aktuellVäxt = växt;
-                    System.out.println(aktuellVäxt.getTypAvNäring().typ);
+                    System.out.println(aktuellVäxt.getNäringstyp().typ);
                     break;
                 }
             }
 
             if (aktuellVäxt == null) {
-                JOptionPane.showMessageDialog(null, "Hittade ingen växt med angivet namn");
+                JOptionPane.showConfirmDialog(null, "Hittade ingen växt med angivet namn",
+                                         "Greenest", JOptionPane.DEFAULT_OPTION);
                 continue;
             }
 
             String namn = aktuellVäxt.getNamn();
-            String näringstyp = aktuellVäxt.getTypAvNäring().typ;
-            double näringsmängd = 0;
+            String näringstyp = aktuellVäxt.getNäringstyp().typ;
+            double näringsmängd = aktuellVäxt.getNäringsmängd();
 
-            if (aktuellVäxt instanceof DynamisktNäringsbehov) {
-                DynamisktNäringsbehov växt = (DynamisktNäringsbehov) aktuellVäxt;
-                näringsmängd = växt.kalkyleraNäringsmängd(aktuellVäxt.getHöjdIMeter());
-            } else {
-                näringsmängd = aktuellVäxt.getNäringsmängd();
+            int knapp = JOptionPane.showConfirmDialog(null, namn + " ska få " + näringsmängd + " liter " + näringstyp,
+                                                 "Greenest", JOptionPane.DEFAULT_OPTION);
+
+            if (knapp != JOptionPane.OK_OPTION) {
+                break;
             }
-
-            JOptionPane.showMessageDialog(null, namn + " ska få " + näringsmängd + " liter " + näringstyp);
         }
 
     }
