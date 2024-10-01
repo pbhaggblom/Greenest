@@ -11,16 +11,15 @@ public class Main {
         Plant meatloaf = new CarnivorousPlant("Meatloaf", 0.7);
         Plant olof = new Palm("Olof", 1);
 
-        //Polymorfism, objekt av de olika subklasserna läggs in i en Plant-lista
         List<Plant> plants = Arrays.asList(igge, laura, meatloaf, olof);
 
         while (true) {
-            String input = JOptionPane.showInputDialog(null, "Vilken växt ska få vätska?", "Greenest", JOptionPane.QUESTION_MESSAGE);
-            if (input == null) {
+            String plantName = JOptionPane.showInputDialog(null, "Vilken växt ska få vätska?", "Greenest", JOptionPane.QUESTION_MESSAGE);
+            if (plantName == null) {
                 System.exit(0);
             }
 
-            Plant currentPlant = findPlant(input, plants);
+            Plant currentPlant = findPlant(plantName, plants);
 
             if (currentPlant == null) {
                 int notFoundButton = JOptionPane.showConfirmDialog(null,
@@ -30,8 +29,12 @@ public class Main {
                 continue;
             }
 
+            /*
+            Polymorfism: currentPlants toString-metod körs här och ger olika utskrift beroende på
+            vilken typ av växt den är
+             */
             int resultButton = JOptionPane.showConfirmDialog(null,
-                    currentPlant.getName() + " ska få " +
+                    currentPlant + " ska få " +
                             currentPlant.getAmountOfNutritionInLiters() + " liter " +
                             currentPlant.getNutritionType().type,
                        "Greenest", JOptionPane.DEFAULT_OPTION);
@@ -51,8 +54,8 @@ public class Main {
         return foundPlant;
     }
 
-    public void checkPressedButton(int i) {
-        if (i != JOptionPane.OK_OPTION) {
+    public void checkPressedButton(int pressedButton) {
+        if (pressedButton != JOptionPane.OK_OPTION) {
             System.exit(0);
         }
     }
