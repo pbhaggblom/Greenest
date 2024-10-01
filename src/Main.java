@@ -16,23 +16,22 @@ public class Main {
 
         while (true) {
             String input = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
-
             if (input == null) {
-                break;
+                System.exit(0);
             }
 
             Plant currentPlant = null;
-
             for (Plant plant : plants) {
-                if (plant.getName().equals(input)) {
+                if (plant.getName().equalsIgnoreCase(input)) {
                     currentPlant = plant;
                     break;
                 }
             }
 
             if (currentPlant == null) {
-                JOptionPane.showConfirmDialog(null, "Hittade ingen växt med angivet namn",
+                int pressedButton = JOptionPane.showConfirmDialog(null, "Hittade ingen växt med angivet namn",
                                          "Greenest", JOptionPane.DEFAULT_OPTION);
+                checkPressedButton(pressedButton);
                 continue;
             }
 
@@ -40,14 +39,17 @@ public class Main {
             String nutritionType = currentPlant.getNutritionType().type;
             double amountOfNutrition = currentPlant.getAmountOfNutritionInLiters();
 
-            int knapp = JOptionPane.showConfirmDialog(null, name + " ska få " + amountOfNutrition + " liter " + nutritionType,
+            int pressedButton = JOptionPane.showConfirmDialog(null, name + " ska få " + amountOfNutrition + " liter " + nutritionType,
                                                  "Greenest", JOptionPane.DEFAULT_OPTION);
-
-            if (knapp != JOptionPane.OK_OPTION) {
-                break;
-            }
+            checkPressedButton(pressedButton);
         }
 
+    }
+
+    public void checkPressedButton(int i) {
+        if (i != JOptionPane.OK_OPTION) {
+            System.exit(0);
+        }
     }
 
     public static void main(String[] args) {
