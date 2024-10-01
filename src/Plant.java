@@ -11,7 +11,6 @@ public abstract class Plant {
     //Använder enums för att ange vilken typ av näring växten ska ha
     private NutritionType nutritionType;
 
-
     public Plant(String name, double heightInMeters) {
         this.name = name;
         this.heightInMeters = heightInMeters;
@@ -36,4 +35,7 @@ public abstract class Plant {
     public void setAmountOfNutritionInLiters(double amountOfNutritionInLiters) {
         this.amountOfNutritionInLiters = amountOfNutritionInLiters;
     }
+
+    @Override
+    public abstract String toString();
 }
