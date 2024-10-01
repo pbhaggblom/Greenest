@@ -15,35 +15,40 @@ public class Main {
         List<Plant> plants = Arrays.asList(igge, laura, meatloaf, olof);
 
         while (true) {
-            String input = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
+            String input = JOptionPane.showInputDialog(null, "Vilken växt ska få vätska?", "Greenest", JOptionPane.QUESTION_MESSAGE);
             if (input == null) {
                 System.exit(0);
             }
 
-            Plant currentPlant = null;
-            for (Plant plant : plants) {
-                if (plant.getName().equalsIgnoreCase(input)) {
-                    currentPlant = plant;
-                    break;
-                }
-            }
+            Plant currentPlant = findPlant(input, plants);
 
             if (currentPlant == null) {
-                int pressedButton = JOptionPane.showConfirmDialog(null, "Hittade ingen växt med angivet namn",
-                                         "Greenest", JOptionPane.DEFAULT_OPTION);
-                checkPressedButton(pressedButton);
+                int notFoundButton = JOptionPane.showConfirmDialog(null,
+                        "Hittade ingen växt med angivet namn",
+                            "Greenest", JOptionPane.DEFAULT_OPTION);
+                checkPressedButton(notFoundButton);
                 continue;
             }
 
-            String name = currentPlant.getName();
-            String nutritionType = currentPlant.getNutritionType().type;
-            double amountOfNutrition = currentPlant.getAmountOfNutritionInLiters();
-
-            int pressedButton = JOptionPane.showConfirmDialog(null, name + " ska få " + amountOfNutrition + " liter " + nutritionType,
-                                                 "Greenest", JOptionPane.DEFAULT_OPTION);
-            checkPressedButton(pressedButton);
+            int resultButton = JOptionPane.showConfirmDialog(null,
+                    currentPlant.getName() + " ska få " +
+                            currentPlant.getAmountOfNutritionInLiters() + " liter " +
+                            currentPlant.getNutritionType().type,
+                       "Greenest", JOptionPane.DEFAULT_OPTION);
+            checkPressedButton(resultButton);
         }
 
+    }
+
+    public Plant findPlant(String plantName, List<Plant> plants) {
+        Plant foundPlant = null;
+        for (Plant plant : plants) {
+            if (plant.getName().equalsIgnoreCase(plantName)) {
+                foundPlant = plant;
+                break;
+            }
+        }
+        return foundPlant;
     }
 
     public void checkPressedButton(int i) {
