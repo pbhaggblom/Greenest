@@ -6,12 +6,12 @@ public class Main {
 
     public Main() {
 
-        Växt igge = new Kaktus("Igge", 0.2);
-        Växt laura = new Palm("Laura", 5);
-        Växt meatloaf = new KöttätandeVäxt("Meatloaf", 0.7);
-        Växt olof = new Palm("Olof", 1);
+        Plant igge = new Cactus("Igge", 0.2);
+        Plant laura = new Palm("Laura", 5);
+        Plant meatloaf = new CarnivorousPlant("Meatloaf", 0.7);
+        Plant olof = new Palm("Olof", 1);
 
-        List<Växt> växter = Arrays.asList(igge, laura, meatloaf, olof);
+        List<Plant> plants = Arrays.asList(igge, laura, meatloaf, olof);
 
         while (true) {
             String input = JOptionPane.showInputDialog("Vilken växt ska få vätska?");
@@ -20,27 +20,26 @@ public class Main {
                 break;
             }
 
-            Växt aktuellVäxt = null;
+            Plant currentPlant = null;
 
-            for (Växt växt : växter) {
-                if (växt.getNamn().equals(input)) {
-                    aktuellVäxt = växt;
-                    System.out.println(aktuellVäxt.getNäringstyp().typ);
+            for (Plant plant : plants) {
+                if (plant.getName().equals(input)) {
+                    currentPlant = plant;
                     break;
                 }
             }
 
-            if (aktuellVäxt == null) {
+            if (currentPlant == null) {
                 JOptionPane.showConfirmDialog(null, "Hittade ingen växt med angivet namn",
                                          "Greenest", JOptionPane.DEFAULT_OPTION);
                 continue;
             }
 
-            String namn = aktuellVäxt.getNamn();
-            String näringstyp = aktuellVäxt.getNäringstyp().typ;
-            double näringsmängd = aktuellVäxt.getNäringsmängd();
+            String name = currentPlant.getName();
+            String nutritionType = currentPlant.getNutritionType().type;
+            double amountOfNutrition = currentPlant.getAmountOfNutrition();
 
-            int knapp = JOptionPane.showConfirmDialog(null, namn + " ska få " + näringsmängd + " liter " + näringstyp,
+            int knapp = JOptionPane.showConfirmDialog(null, name + " ska få " + amountOfNutrition + " liter " + nutritionType,
                                                  "Greenest", JOptionPane.DEFAULT_OPTION);
 
             if (knapp != JOptionPane.OK_OPTION) {

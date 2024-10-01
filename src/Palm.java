@@ -1,13 +1,13 @@
-public class Palm extends Växt implements DynamisktNäringsbehov {
+public class Palm extends Plant implements WateringInstruction {
 
-    public Palm(String namn, double höjdIMeter) {
-        super(namn, höjdIMeter);
-        this.setNäringstyp(Näringstyp.KRANVATTEN);
-        this.kalkyleraNäringsmängd(höjdIMeter);
+    public Palm(String name, double heightInMeters) {
+        super(name, heightInMeters);
+        this.setNutritionType(NutritionType.TAP_WATER);
+        this.calculateAmountOfNutrition(heightInMeters);
     }
 
     @Override
-    public void kalkyleraNäringsmängd(double höjdIMeter) {
-        this.setNäringsmängd(0.5 * höjdIMeter);
+    public void calculateAmountOfNutrition(double heightInMeters) {
+        this.setAmountOfNutrition(0.5 * heightInMeters);
     }
 }
