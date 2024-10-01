@@ -2,7 +2,6 @@ public class KöttätandeVäxt extends Växt implements DynamisktNäringsbehov {
 
     public KöttätandeVäxt(String namn, double höjdIMeter) {
         super(namn, höjdIMeter);
-        this.setVäxttyp(Växttyp.KÖTTÄTANDE_VÄXT);
         this.setNäringstyp(Näringstyp.PROTEINDRYCK);
         this.kalkyleraNäringsmängd(höjdIMeter);
     }

@@ -1,7 +1,6 @@
 public abstract class Växt {
 
     private String namn;
-    private Växttyp växttyp;
     private double höjdIMeter;
     private Näringstyp näringstyp;
     private double näringsmängd;
@@ -13,10 +12,6 @@ public abstract class Växt {
 
     public String getNamn() {
         return namn;
-    }
-
-    public void setVäxttyp(Växttyp växttyp) {
-        this.växttyp = växttyp;
     }
 
     public double getHöjdIMeter() {

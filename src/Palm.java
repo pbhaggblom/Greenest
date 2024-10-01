@@ -2,7 +2,6 @@ public class Palm extends Växt implements DynamisktNäringsbehov {
 
     public Palm(String namn, double höjdIMeter) {
         super(namn, höjdIMeter);
-        this.setVäxttyp(Växttyp.PALM);
         this.setNäringstyp(Näringstyp.KRANVATTEN);
         this.kalkyleraNäringsmängd(höjdIMeter);
     }
