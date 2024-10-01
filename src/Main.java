@@ -14,7 +14,9 @@ public class Main {
         List<Plant> plants = Arrays.asList(igge, laura, meatloaf, olof);
 
         while (true) {
-            String plantName = JOptionPane.showInputDialog(null, "Vilken växt ska få vätska?", "Greenest", JOptionPane.QUESTION_MESSAGE);
+            String plantName = JOptionPane.showInputDialog(null,
+                    "Vilken växt ska få vätska?",
+                    "Greenest", JOptionPane.QUESTION_MESSAGE);
             if (plantName == null) {
                 System.exit(0);
             }
@@ -24,7 +26,7 @@ public class Main {
             if (currentPlant == null) {
                 int notFoundButton = JOptionPane.showConfirmDialog(null,
                         "Hittade ingen växt med angivet namn",
-                            "Greenest", JOptionPane.DEFAULT_OPTION);
+                        "Greenest", JOptionPane.DEFAULT_OPTION);
                 checkPressedButton(notFoundButton);
                 continue;
             }
@@ -34,10 +36,9 @@ public class Main {
             vilken typ av växt den är
              */
             int resultButton = JOptionPane.showConfirmDialog(null,
-                    currentPlant + " ska få " +
-                            currentPlant.getAmountOfNutritionInLiters() + " liter " +
-                            currentPlant.getNutritionType().type,
-                       "Greenest", JOptionPane.DEFAULT_OPTION);
+                    currentPlant + " ska få " + currentPlant.getAmountOfNutritionInLiters() +
+                            " liter " + currentPlant.getNutritionType().type,
+                    "Greenest", JOptionPane.DEFAULT_OPTION);
             checkPressedButton(resultButton);
         }
 
