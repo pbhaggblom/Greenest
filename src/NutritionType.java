@@ -6,7 +6,7 @@ public enum NutritionType {
 
     public final String type;
 
-    private NutritionType(String type) {
+    NutritionType(String type) {
         this.type = type;
     }
 }

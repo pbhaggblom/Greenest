@@ -11,6 +11,7 @@ public class Main {
         Plant meatloaf = new CarnivorousPlant("Meatloaf", 0.7);
         Plant olof = new Palm("Olof", 1);
 
+        //Polymorfism, objekt av de olika subklasserna läggs in i en Plant-lista
         List<Plant> plants = Arrays.asList(igge, laura, meatloaf, olof);
 
         while (true) {
@@ -37,7 +38,7 @@ public class Main {
 
             String name = currentPlant.getName();
             String nutritionType = currentPlant.getNutritionType().type;
-            double amountOfNutrition = currentPlant.getAmountOfNutrition();
+            double amountOfNutrition = currentPlant.getAmountOfNutritionInLiters();
 
             int knapp = JOptionPane.showConfirmDialog(null, name + " ska få " + amountOfNutrition + " liter " + nutritionType,
                                                  "Greenest", JOptionPane.DEFAULT_OPTION);

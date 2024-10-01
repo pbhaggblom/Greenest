@@ -1,9 +1,16 @@
 public abstract class Plant {
 
+    /*
+    Kapslar in Plants instansvariabler genom att göra dem private,
+    gör det lättare att kontrollera vilka värden som sätts genom
+    getters och setters
+     */
     private String name;
     private double heightInMeters;
+    private double amountOfNutritionInLiters;
+    //Använder enums för att ange vilken typ av näring växten ska ha
     private NutritionType nutritionType;
-    private double amountOfNutrition;
+
 
     public Plant(String name, double heightInMeters) {
         this.name = name;
@@ -22,11 +29,11 @@ public abstract class Plant {
         this.nutritionType = nutritionType;
     }
 
-    public double getAmountOfNutrition() {
-        return amountOfNutrition;
+    public double getAmountOfNutritionInLiters() {
+        return amountOfNutritionInLiters;
     }
 
-    public void setAmountOfNutrition(double amountOfNutrition) {
-        this.amountOfNutrition = amountOfNutrition;
+    public void setAmountOfNutritionInLiters(double amountOfNutritionInLiters) {
+        this.amountOfNutritionInLiters = amountOfNutritionInLiters;
     }
 }

@@ -6,8 +6,12 @@ public class Palm extends Plant implements WateringInstruction {
         this.calculateAmountOfNutrition(heightInMeters);
     }
 
+    /*
+    Växter som har en specifik formel för att räkna ut
+    bevattningen implementerar interfacet WateringInstruction
+     */
     @Override
     public void calculateAmountOfNutrition(double heightInMeters) {
-        this.setAmountOfNutrition(0.5 * heightInMeters);
+        this.setAmountOfNutritionInLiters(0.5 * heightInMeters);
     }
 }
