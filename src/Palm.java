@@ -13,7 +13,7 @@ public class Palm extends Plant implements Calculable {
 
     /*
     Växter som har en specifik formel för att räkna ut
-    bevattningen implementerar interfacet WateringInstruction
+    bevattningen implementerar interfacet Calculable
      */
     @Override
     public void calculateAmountOfNutrition(double heightInMeters) {
