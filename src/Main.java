@@ -26,7 +26,7 @@ public class Main {
             if (currentPlant == null) {
                 int notFoundButton = JOptionPane.showConfirmDialog(null,
                         "Hittade ingen växt med angivet namn",
-                        "Greenest", JOptionPane.DEFAULT_OPTION);
+                        "Greenest", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
                 checkPressedButton(notFoundButton);
                 continue;
             }
@@ -37,7 +37,7 @@ public class Main {
              */
             int resultButton = JOptionPane.showConfirmDialog(null, currentPlant + " ska få " +
                             currentPlant.getAmountOfNutritionInLiters() + " liter " +
-                            currentPlant.getNutritionType().type, "Greenest", JOptionPane.DEFAULT_OPTION);
+                            currentPlant.getNutritionType().type, "Greenest", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
             checkPressedButton(resultButton);
         }
 
