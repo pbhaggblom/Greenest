@@ -36,9 +36,9 @@ public class Main {
             vilken typ av växt den är
              */
             int resultButton = JOptionPane.showConfirmDialog(null,
-                    currentPlant + " ska få " + currentPlant.getAmountOfNutritionInLiters() +
-                            " liter " + currentPlant.getNutritionType().type,
-                    "Greenest", JOptionPane.DEFAULT_OPTION);
+                    currentPlant + " ska få " +
+                            currentPlant.getAmountOfNutritionInLiters() + " liter " +
+                            currentPlant.getNutritionType().type,"Greenest", JOptionPane.DEFAULT_OPTION);
             checkPressedButton(resultButton);
         }
 
