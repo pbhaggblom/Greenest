@@ -35,7 +35,7 @@ public class Main {
             Polymorfism: currentPlants toString-metod körs här och ger olika utskrift beroende på
             vilken typ av växt den är
              */
-            int resultButton = JOptionPane.showConfirmDialog(null,currentPlant + " ska få " +
+            int resultButton = JOptionPane.showConfirmDialog(null, currentPlant + " ska få " +
                             currentPlant.getAmountOfNutritionInLiters() + " liter " +
                             currentPlant.getNutritionType().type, "Greenest", JOptionPane.DEFAULT_OPTION);
             checkPressedButton(resultButton);
