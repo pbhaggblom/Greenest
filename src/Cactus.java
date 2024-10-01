@@ -7,4 +7,8 @@ public class Cactus extends Plant {
         this.setAmountOfNutritionInLiters(0.02);
     }
 
+    @Override
+    public String toString() {
+        return "Kaktusen " + this.getName();
+    }
 }

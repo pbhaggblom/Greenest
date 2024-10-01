@@ -1,9 +1,14 @@
-public class Palm extends Plant implements WateringInstruction {
+public class Palm extends Plant implements Calculable {
 
     public Palm(String name, double heightInMeters) {
         super(name, heightInMeters);
         this.setNutritionType(NutritionType.TAP_WATER);
         this.calculateAmountOfNutrition(heightInMeters);
+    }
+
+    @Override
+    public String toString() {
+        return "Palmen " + this.getName();
     }
 
     /*
